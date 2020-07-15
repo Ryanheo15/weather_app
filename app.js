@@ -53,7 +53,8 @@ let display_matches = function(matches){
     if(matches.length < 10){
       matches.forEach((match) => {
         let item = document.createElement("li");
-        item.classList = "list-group-item text-primary";
+        item.classList = "list-group-item text-primary city_item";
+        item.id = match.id;
         item.textContent = match.name;
         match_list.append(item);
       });
@@ -128,6 +129,9 @@ match_cont.click(async (e) => {
     weather_icon.attr("src", icon_url);
 
     temp.text(farenheit);
+  }
+  else {
+    console.log("not working");
   }
 });
 
